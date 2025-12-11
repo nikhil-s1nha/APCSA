@@ -20,9 +20,10 @@ public class Lab02LoopsAndNumbers {
 		int sum = 0;
 		
 		/* Write your code to determine the sum of all numbers between 1 and 100 (inclusive) */
-		
-		
-		
+        for (int i = n1; i <= n2; i++) {
+            sum += i;
+        }
+
 		/* Return the calculated sum */
 		return sum;
 	}
@@ -36,7 +37,9 @@ public class Lab02LoopsAndNumbers {
 		int sum = 0;
 		
 		/* Write your code to determine the sum of all even numbers between n1 and n2 (inclusive) */
-
+        for (int i = n1; i <= n2; i += 2) {
+            sum += i;
+        }
 		
 		/* Return the calculated sum instead of 0 */
 		return sum;
@@ -51,8 +54,9 @@ public class Lab02LoopsAndNumbers {
 		int sum = 0;
 
 		/* Write your code to determine the sum of the squares of all numbers between 1 and 10 (inclusive) */
-
-		
+        for (int i = 1; i <= n; i++) {
+            sum += i * i;
+        }
 		
 		/* Return the calculated sum instead of 0 */
 		return sum;
@@ -75,8 +79,24 @@ public class Lab02LoopsAndNumbers {
 		 * To get the formatting right, you will need to use String.format(" %5d", someIntVariable).
 		 * Note also that there are 5 numbers on each line, so you'll need to insert \n where appropriate.
 		 */
+        int targ = 1;
+        int vary = 3;
 
-		
+        for (int i = 1; i <= n; i++) {
+            res += String.format(" %5d", targ);
+            if (i < n){
+                if (i%5 != 0){
+                    res += ", ";
+                } else {
+                    res += ",";
+                }
+            }
+            if (i % 5 == 0 && i < n){
+                res += "\n";
+            }
+            targ += vary;
+            vary += 2;
+        }
 		
 		/* Return the created string instead of the empty string */
 		return res;
@@ -97,7 +117,14 @@ public class Lab02LoopsAndNumbers {
 		String res = "";
 		
 		/* Write your code here to generate the linear sequence and store it in res */
-		
+		int num = -4;
+        for (int i = 1; i <= totalCount; i++) {
+            res += num;
+            if (i < totalCount) {
+                res += ", ";
+            }
+            num += 18;
+        }
 		
 		/* Return the updated string */
 		return res;
@@ -116,7 +143,14 @@ public class Lab02LoopsAndNumbers {
 		String res = "";
 
 		/* Write your code here to generate the linear sequence and store it in res */
-		
+		int num = 41;
+        for (int i = 1; i <= totalCount; i++) {
+            res += num;
+            if (i < totalCount) {
+                res += ", ";
+            }
+            num -= 12;
+        }
 		
 		/* Return the updated string */
 		return res;
@@ -139,8 +173,14 @@ public class Lab02LoopsAndNumbers {
 		 * The string should be formatted like this: "1, 3, 9, 27, ..."
 		 * without a comma after the last item in the list.
 		 */
-
-		
+        int power = 1;
+        for (int i = 0; i <= n; i++) {
+            res += power;
+            if (i < n){
+                 res += ", ";
+            }
+            power *= 3;
+        }
 		
 		/* Return the updated string */
 		return res;
@@ -158,8 +198,15 @@ public class Lab02LoopsAndNumbers {
 		String res = "";
 		
 		/* Write your code here to update the string s with the Fibonnaci sequence */
-
-
+        int a = 1;
+        int b = 1;
+        res = a + ", " + b;
+        for (int i = 3; i <= n; i++) {
+            int next = a + b;
+            res += ", " + next;
+            a = b;
+            b = next;
+        }
 		
 		/* Return the updated string */
 		return res;
@@ -180,7 +227,12 @@ public class Lab02LoopsAndNumbers {
 	static boolean isPrime (int n) {
 		
 		/* Write your code here */
-		
+		for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0){
+                return false;
+            }
+        }
+
 		return true;
 	}
 	
@@ -203,7 +255,16 @@ public class Lab02LoopsAndNumbers {
 		String res = "";
 
 		/* Write your code here */
-
+        int count = 0;
+        for (int i = 2; i <= capForPrimes; i++) {
+            if (isPrime(i)) {
+                res += String.format("%6d", i);
+                count++;
+                if (count % 10 == 0){
+                    res += "\n";
+                }
+            }
+        }
 		
 		return res;
 	}
