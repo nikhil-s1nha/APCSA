@@ -78,60 +78,62 @@ public class Lab00PrintReceipt {
         // Print the header, showing the quantity of items bought, description, unit price, and total price
         // Add the correct arguments to the printf statement to complete this section.
 
-        System.out.println("	  #	Description                   		     Unit Price		    Total Price");
+        System.out.printf("%7s %-25s %27s %20s%n", "#", "Description", "Unit Price", "Total Price");
+		
+		// Print a line below the header so that it contains "=" and " " (empty space) below each
+		// character in the header line.
+		// Add the correct arguments to the printf statement to complete this section.
 
-        // Print a line below the header so that it contains "=" and " " (empty space) below each
-        // character in the header line.
-        // Add the correct arguments to the printf statement to complete this section.
+		System.out.printf("%7s %-25s %27s %20s%n", "===", "===========", "==========", "===========");
+		
+		// Print the quantity, description, unit price, and total price for each type of item purchased
+		// Add the correct arguments to each printf statement to complete this section.
+		
+		System.out.printf("%7s %-25s %,27.2f %,20.2f%n", "1", "TV", UP_TV, tpTV); // TVs
 
-        System.out.println("	===	===========                   		     ==========		    ===========");
+		System.out.printf("%7s %-25s %,27.2f %,20.2f%n", "2", "VCR", UP_VCR, tpVCR); // VCRs
 
-        // Print the quantity, description, unit price, and total price for each type of item purchased
-        // Add the correct arguments to each printf statement to complete this section.
+		System.out.printf("%7s %-25s %,27.2f %,20.2f%n", "3", "Remote Controller", UP_RC, tpRC); // Remote Controllers
 
-        System.out.printf("      %d  %s                                          %.2f             %.2f%n", qtyTV, TV, UP_TV, tpTV );
-        System.out.printf("      %d  %s                                         %.2f             %.2f%n", qtyVCR, VCR, UP_VCR, tpVCR);
-        System.out.printf("      %d  %s                            %.2f              %.2f%n", qtyRC, RC, UP_RC, tpRC);
-        System.out.printf("      %d  %s                                   %.2f             %.2f%n", qtyCDP, CDP, UP_CDP, tpCDP);
-        System.out.printf("      %d  %s                               %.2f              %.2f%n", qtyTR, TR, UP_TR, tpTR);
+		System.out.printf("%7s %-25s %,27.2f %,20.2f%n", "4", "CD Player", UP_CDP, tpCDP); // CD Players
 
-        // Add the correct argument to this printf statement to create a new line.
-        //System.out.printf(); // Create some white space between the list of items and the totals.
+		System.out.printf("%7s %-25s %,27.2f %,20.2f%n", "5", "Tape Recorder", UP_TR, tpTR); // Tape Recorders
 
-        // Declare a variable to hold the sub total amount, and set its value to be
-        // the sum of the total prices of all the items bought.
-        // Fill in the blank to complete this section.
+		// Add the correct argument to this printf statement to create a new line.
+		//System.out.printf(); // Create some white space between the list of items and the totals.
 
-		double subTotal = tpTV + tpVCR + tpRC + tpCDP + tpTR;
+		System.out.printf("%n"); 
 
-
-        // Print the sub total.
-        // Add the correct arguments to this printf statement to complete this section.
-        System.out.printf("%n");
-		System.out.printf("							       SUBTOTAL		       %.2f", subTotal);
-
-        // Declare a variable to hold the tax incurred, and set its value to be
-        // the product of the sub total and the tax rate (in decimal).
-
+		// Declare a variable to hold the sub total amount, and set its value to be
+		// the sum of the total prices of all the items bought.
 		// Fill in the blank to complete this section.
-		double tax = subTotal * TAX_RATE;
+	
+		double subtotal = tpTV + tpVCR + tpRC + tpCDP + tpTR;
 
-        // Print the tax on the sub total (also inform the customer about the tax rate percent).
-        // Add the correct arguments to this printf statement to complete this section.
-        System.out.printf("%n");
-		System.out.printf("							    TAX @ 8.25%%		         %.2f", tax);
+		// Print the sub total.
+		// Add the correct arguments to this printf statement to complete this section.
 
-        // Declare a variable to hold the total amount after tax,
-        // and set its value to be the sum of the sub total and the tax.
-        // Fill in the blank to complete this section.
+		System.out.printf("%43s %,21.2f%n", "SUBTOTAL", (subtotal));
+		
+		// Declare a variable to hold the tax incurred, and set its value to be
+		// the product of the sub total and the tax rate (in decimal).
 
-		double total = subTotal + tax;
+		double tax = subtotal * TAX_RATE;
 
+		// Print the tax on the sub total (also inform the customer about the tax rate percent).
+		// Add the correct arguments to this printf statement to complete this section.
 
-        // Print the total amount
-        // Fill in the blank to complete this section.
-        System.out.printf("%n");
-		System.out.printf("							          TOTAL		       %.2f", total);
+		System.out.printf("%43s %,21.2f%n", "TAX @ 8.25%", (tax));
+
+		// Declare a variable to hold the total amount after tax,
+		// and set its value to be the sum of the sub total and the tax.
+		// Fill in the blank to complete this section.
+
+		double total = subtotal + tax;
+		
+		// Print the total amount
+		// Fill in the blank to complete this section.
+		System.out.printf("%43s %,21.2f%n", "TOTAL", (total));
 
     }
 
