@@ -79,10 +79,12 @@ public class Lab04bSentinelsNumbers {
 		// Note: take care of the special case when count is 0
 		// Write your code-snippet below this.
         double average = 0;
-        if (count != 0){
-            average = total / count;
+        if (count == 0){
+            System.out.println("Count is 0 and therefore the average cannot be computed");
+        } else{
+            average = (double) total / count;
+            System.out.println("Average " + average);
         }
-        System.out.println("Average " + average);
 		
 		// Section E: CLOSE THE SCANNER OBJECT
 		// Close scan1
