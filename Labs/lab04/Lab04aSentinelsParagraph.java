@@ -21,6 +21,15 @@ public class Lab04aSentinelsParagraph {
 		// Read input from the console, use the variable count to keep track of the number of words.
 		// Use the hasNext() and next() methods. Use the string "0" to end the paragraph.
 		// Enter your code below this line
+
+        Scanner reader = new Scanner(System.in);
+        while(reader.hasNext()){
+            String word = reader.next();
+            if(word.equals("0")){
+                break;
+            }
+            count++;
+        }
 		
 		System.out.println("Total # of words = " + count);
 		inScan.close();

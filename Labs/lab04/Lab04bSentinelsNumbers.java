@@ -41,7 +41,17 @@ public class Lab04bSentinelsNumbers {
 		//   declare and initialize a File object using the given fileName
 		//   Declare and initialize the scan1 object to read from this file.
 		// Write your code below these comments
-
+        Scanner scan1;
+        if (fileName == null){
+            System.out.println("Reading input from console");
+            System.out.println("Enter numbers to be added up; end with any non-numeric string of characters to end the sequence:");
+            scan1 = new Scanner(System.in);
+        } else {
+            System.out.println("Reading input from " + fileName);
+            printFileContents(fileName);
+            File reading = new File(fileName); 
+            scan1 = new Scanner(reading);
+        }
 		
 		// Section B: ACCUMULATE TOTAL and TRACK COUNT OF NUMBERS
 		// Declare and initialize total and count to keep track to accumulate the
@@ -49,12 +59,18 @@ public class Lab04bSentinelsNumbers {
 		// Set up a while loop to accumulate the total and to count the number of numbers.
 		// Use the hasNextInt() and nextInt() methods.
 		// Write your code for this section below this:
-
+        int total = 0;
+        int count = 0;
+        while(scan1.hasNextInt()){
+            int number = scan1.nextInt();
+            total += number;
+            count++;
+        }
 		
 		// Section C: PRINT THE TOTAL
 		// Print the total with a prefix "Total = " and append the total.
 		// Write your 1-line code below this.
-
+        System.out.println("Total " + total);
 		
 		// Section D: CALCULATE AND PRINT THE AVERAGE
 		// Declare and initialize the average variable.
@@ -62,12 +78,16 @@ public class Lab04bSentinelsNumbers {
 		// Print the average with the prefix "Average = " and append the average.
 		// Note: take care of the special case when count is 0
 		// Write your code-snippet below this.
-
+        double average = 0;
+        if (count != 0){
+            average = total / count;
+        }
+        System.out.println("Average " + average);
 		
 		// Section E: CLOSE THE SCANNER OBJECT
 		// Close scan1
 		// Write your 1-line code below this.
-
+        scan1.close();
 		
 		System.out.println("=========================");
 
@@ -85,7 +105,7 @@ public class Lab04bSentinelsNumbers {
 			printInputNumsAvg(null);			
 		}
 		else {
-			String path = "src/lab04/";
+			String path = "Labs/lab04/";
 			printInputNumsAvg(path+"nums1.txt");
 			printInputNumsAvg(path+"nums2.txt");
 			printInputNumsAvg(path+"nums3.txt");
