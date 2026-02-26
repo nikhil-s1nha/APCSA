@@ -17,7 +17,17 @@ public class Lab05aMySortArray {
 		/* WRITE YOUR SORTING ALGORITHM HERE
 		 * Increment the numIterations variable during each iteration.
 		 */
+        for (int i = 1; i < arrSorted.length; i++){
+            int moving = i;
 
+            while(moving > 0 && arrSorted[moving] < arrSorted[moving - 1]){
+                int current = arrSorted[moving];
+                arrSorted[moving] = arrSorted[moving-1];
+                arrSorted[moving-1] = current;
+                moving--;
+            }
+        }
+        
 		
 		System.out.println("Number of iterations = " + numIterations);
 		return arrSorted;
