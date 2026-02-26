@@ -23,12 +23,13 @@ public class Lab05bBubbleSortArray {
 		 */
         for (int j = 0; j < arrSorted.length; j++){
             for (int i = 0; i < arrSorted.length - 1; i++){
-            numIterations++;
 
             if (arrSorted[i] > arrSorted[i+1]){
                 int current = arrSorted[i];
                 arrSorted[i] = arrSorted[i+1];
                 arrSorted[i+1] = current;
+                numIterations++;
+
             }
         }
         }
