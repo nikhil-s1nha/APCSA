@@ -54,10 +54,10 @@ public class Lab05bBubbleSortArray {
 
 	public static void main(String[] args) {
 		
-		int[] arr1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-		int[] arr2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-		int[] arr3 = {5, 9, 3, 8, 2, 0, 7, 4, 6, 1};
-		int[] expectedSortedArr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		int[] arr1 = {9, 10, 21, 32, 43, 54, 65, 76, 87, 98};
+		int[] arr2 = {98, 87, 76, 65, 54, 43, 32, 21, 10, 9};
+		int[] arr3 = {65, 9, 43, 98, 32, 10, 87, 54, 76, 21};
+		int[] expectedSortedArr = {9, 10, 21, 32, 43, 54, 65, 76, 87, 98};
 		
 		int numTotal = 3;
 		int numPassed = 0;
