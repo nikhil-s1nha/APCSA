@@ -14,7 +14,14 @@ public class Lab07aArrayListAlgorithms {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS, REPLACING THE LAST STATEMENT BELOW
 		*/
-		
+		for (int i = 1; i <= number; i++) {
+			if (i * i == number) {
+				return true;
+			}
+			if (i * i > number) {
+				return false;
+			}
+		}
 		return false;
 	}
 
@@ -30,8 +37,14 @@ public class Lab07aArrayListAlgorithms {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		*/
-
-		return -1;
+		int foundAt = -1;
+		for (int i = 0; i < arrL.size(); i++) {
+			if (arrL.get(i) == findInt) {
+				foundAt = i;
+				break;
+			}
+		}
+		return foundAt;
 	};
 	
 	/**
@@ -47,7 +60,11 @@ public class Lab07aArrayListAlgorithms {
 	public static boolean searchRemove (ArrayList<Integer> arrL, int findInt) {
 		/* INSERT YOUR CODE BELOW THESE COMMENTS, REMOVING THE LAST LINE IF NECESSARY
 		*/
-
+		int idx = search(arrL, findInt);
+		if (idx >= 0) {
+			arrL.remove(idx);
+			return true;
+		}
 		return false;
 	}
 
@@ -62,8 +79,14 @@ public class Lab07aArrayListAlgorithms {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS, REMOVING THE LAST LINE IF NECESSARY
 		*/
-
-		return false;
+		boolean found = false;
+		for (int val : arrL) {
+			if (IsPerfectSquare(val)) {
+				found = true;
+				break;
+			}
+		}
+		return found;
 	}
 	
 	/**
@@ -77,8 +100,14 @@ public class Lab07aArrayListAlgorithms {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS, REMOVING THE LAST LINE IF NECESSARY
 		*/
-
-		return false;
+		boolean allSquares = true;
+		for (int val : arrL) {
+			if (!IsPerfectSquare(val)) {
+				allSquares = false;
+				break;
+			}
+		}
+		return allSquares;
 	}
 	
 	/**
@@ -94,7 +123,11 @@ public class Lab07aArrayListAlgorithms {
 
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		*/
-
+		for (int i = 0; i < arrL.size(); i++) {
+			if (IsPerfectSquare(arrL.get(i))) {
+				count = count + 1;
+			}
+		}
 		
 		return count;
 	}

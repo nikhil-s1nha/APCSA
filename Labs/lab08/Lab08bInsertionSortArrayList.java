@@ -23,12 +23,14 @@ public class Lab08bInsertionSortArrayList {
 		for (int i = 1; i < arrL.size(); i++) {
 			int temp = arrL.get(i);
 			int possibleIndex = i;	
-			while (possibleIndex > 0 &&
-				   temp < arrL.get(possibleIndex - 1)) {
+			while (possibleIndex > 0) {
+				numIterations++;
+				if (temp >= arrL.get(possibleIndex - 1)) {
+					break;
+				}
 				arrL.set(possibleIndex,
 						 arrL.get(possibleIndex - 1));
 				possibleIndex--;
-				numIterations++;
 			}
 			arrL.set(possibleIndex, temp);
 		}
@@ -53,15 +55,15 @@ public class Lab08bInsertionSortArrayList {
          * This version must NOT use set.
          */
 		for (int i = 1; i < arrL.size(); i++) {
-			int temp = arrL.get(i);
+			int temp = arrL.remove(i);
 			int possibleIndex = i;
-			while (possibleIndex > 0 &&
-				   temp < arrL.get(possibleIndex - 1)) {
-	
-				possibleIndex--;
+			while (possibleIndex > 0) {
 				numIterations++;
+				if (temp >= arrL.get(possibleIndex - 1)) {
+					break;
+				}
+				possibleIndex--;
 			}
-			arrL.remove(i);
 			arrL.add(possibleIndex, temp);
 		}
 	    	    

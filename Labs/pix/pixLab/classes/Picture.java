@@ -271,7 +271,7 @@ public class Picture extends SimplePicture
               
               pixel.setBlue(blue - 10);
               pixel.setGreen(green - 40);
-              pixel.setRed(red + 80);
+              pixel.setRed(red * 3);
               
           }
       }

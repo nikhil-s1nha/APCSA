@@ -121,19 +121,19 @@ public class PictureTester
 	  // Uncomment the call to each method that you implement, and run it.
 	  
 //    testZeroBlue(); // already implemented
-//    testKeepOnlyBlue(); //mine
+//    testKeepOnlyBlue(); //m
 //    testKeepOnlyRed();
 //    testKeepOnlyGreen();
-//    testNegate(); //mine
+//    testNegate(); //m
 //    testGrayscale();
-//    testFixUnderwater(); //mine
+//    testFixUnderwater(); //m
 //    testMirrorVertical(); // already implemented
-//    testMirrorVerticalRightToLeft(); //mine
+//    testMirrorVerticalRightToLeft(); //m
 //    testMirrorHorizontal();
 //    testMirrorHorizontalBotToTop();
-    testMirrorDiagonal();
+//    testMirrorDiagonal();
 //    testMirrorTemple(); // already implemented
-//    testMirrorArms(); //mine
+//    testMirrorArms(); //m
 //    testMirrorGull();
 //    testCollage(); // already implemented
 //    testCopy();

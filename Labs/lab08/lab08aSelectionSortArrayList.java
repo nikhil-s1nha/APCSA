@@ -13,7 +13,7 @@ public class lab08aSelectionSortArrayList {
 	 *                Precondition - arrL is not null
 	 */
 	public static void selectionSort1 (ArrayList<Integer> arrL) {
-        int passCount = 0;
+        int numIterations = 0;
         
         /* Insert your code below this comment.
          * This version must use get and set to do a swap similar to arrays.
@@ -23,6 +23,8 @@ public class lab08aSelectionSortArrayList {
 		for (int outer = 0; outer < n; outer++) {
 			int smallestIdx = outer;
 			for (int inner = outer + 1; inner < n; inner++) {
+				numIterations++;
+
 				if (arrL.get(inner) < arrL.get(smallestIdx)) {
 					smallestIdx = inner;
 				}
@@ -30,12 +32,11 @@ public class lab08aSelectionSortArrayList {
 			int hold = arrL.get(smallestIdx);
 			arrL.set(smallestIdx, arrL.get(outer));
 			arrL.set(outer, hold);
-			passCount++;
 		}
         
         
         // Print the total number of iterations
-		System.out.println("Number of iterations: " + passCount);
+		System.out.println("Number of iterations: " + numIterations);
 	}
 	
 
@@ -48,7 +49,7 @@ public class lab08aSelectionSortArrayList {
 	 *                Precondition - arrL is not null
 	 */
 	public static void selectionSort2 (ArrayList<Integer> arrL) {
-        int passCount = 0;
+        int numIterations = 0;
         
         /* Insert your code below this comment.
          * This version must use get, add, and remove.
@@ -58,17 +59,17 @@ public class lab08aSelectionSortArrayList {
 		for (int outer = 0; outer < n; outer++) {
 			int smallestIdx = outer;
 			for (int inner = outer + 1; inner < n; inner++) {
+				numIterations++;
 				if (arrL.get(inner) < arrL.get(smallestIdx)) {
 					smallestIdx = inner;
 				}
 			}
-			int pulled = arrL.remove(smallestIdx);
-			arrL.add(outer, pulled);
-			passCount++;
+			arrL.add(outer, arrL.remove(smallestIdx));
+
 		}
         
         // Print the total number of iterations
-	    System.out.println("Number of iterations: " + passCount);
+	    System.out.println("Number of iterations: " + numIterations);
 		
 	}
 	
