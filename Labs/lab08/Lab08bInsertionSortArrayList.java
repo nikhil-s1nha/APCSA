@@ -20,7 +20,18 @@ public class Lab08bInsertionSortArrayList {
          * This version must use get and set to do a swap similar to arrays.
          * This version must NOT use add or remove.
          */
-
+		for (int i = 1; i < arrL.size(); i++) {
+			int temp = arrL.get(i);
+			int possibleIndex = i;	
+			while (possibleIndex > 0 &&
+				   temp < arrL.get(possibleIndex - 1)) {
+				arrL.set(possibleIndex,
+						 arrL.get(possibleIndex - 1));
+				possibleIndex--;
+				numIterations++;
+			}
+			arrL.set(possibleIndex, temp);
+		}
         
         // Print the total number of iterations
 	    System.out.println("Number of iterations: " + numIterations);
@@ -41,7 +52,18 @@ public class Lab08bInsertionSortArrayList {
          * This version must use get, add, and remove.
          * This version must NOT use set.
          */
-
+		for (int i = 1; i < arrL.size(); i++) {
+			int temp = arrL.get(i);
+			int possibleIndex = i;
+			while (possibleIndex > 0 &&
+				   temp < arrL.get(possibleIndex - 1)) {
+	
+				possibleIndex--;
+				numIterations++;
+			}
+			arrL.remove(i);
+			arrL.add(possibleIndex, temp);
+		}
 	    	    
         // Print the total number of iterations
 	    System.out.println("Number of iterations: " + numIterations);
@@ -117,3 +139,4 @@ public class Lab08bInsertionSortArrayList {
 	
 
 }
+

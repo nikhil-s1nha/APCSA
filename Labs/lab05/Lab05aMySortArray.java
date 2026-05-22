@@ -20,11 +20,14 @@ public class Lab05aMySortArray {
         for (int i = 1; i < arrSorted.length; i++){
             int moving = i;
 
-            while(moving > 0 && arrSorted[moving] < arrSorted[moving - 1]){
+            while(moving > 0){
+                numIterations++;
+				if (arrSorted[moving] >= arrSorted[moving - 1]) {
+					break;
+				}
                 int current = arrSorted[moving];
                 arrSorted[moving] = arrSorted[moving-1];
                 arrSorted[moving-1] = current;
-                numIterations++;
                 moving--;
             }
         }

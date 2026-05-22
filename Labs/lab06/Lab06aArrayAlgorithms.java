@@ -13,8 +13,16 @@ public class Lab06aArrayAlgorithms {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		*/
-		
-		
+		if (number <= 1) {
+			return false;
+		}
+		int divisor = 2;
+		while (divisor < number) {
+			if (number % divisor == 0) {
+				return false;
+			}
+			divisor++;
+		}
 		return true;
 	}
 
@@ -34,9 +42,13 @@ public class Lab06aArrayAlgorithms {
 		 * Implement this with a for each loop (enhanced for loop)
 		 * Call isPrime to determine if a number is a prime
 		 */
-		
-
-		return false;
+		boolean foundPrime = false;
+		for (int element : arr) {
+			if (isPrime(element)) {
+				foundPrime = true;
+			}
+		}
+		return foundPrime;
 	}
 	
 	/**** PART A-2 allElemsArePrimes ****/
@@ -52,8 +64,11 @@ public class Lab06aArrayAlgorithms {
 		 * Implement this with a for each loop (enhanced for loop)
 		 * Call NumberProperties.isPrime to determine if a number is a prime
 		 */
-
-		
+		for (int element : arr) {
+			if (!isPrime(element)) {
+				return false;
+			}
+		}
 		return true;
 	}
 	
@@ -67,15 +82,17 @@ public class Lab06aArrayAlgorithms {
 	 */
 	public static int numberOfPrimes (int[] arr) {
 
-		int count = 0;
-
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		 * Implement this with a for each loop (enhanced for loop)
 		 * Call NumberProperties.isPrime to determine if a number is a prime
 		 */
-		
-		
-		return count;
+		int primeTotal = 0;
+		for (int element : arr) {
+			if (isPrime(element)) {
+				primeTotal = primeTotal + 1;
+			}
+		}
+		return primeTotal;
 	}
 	
 	/********** PART B: CONSECUTIVE PAIRS - noMoreThanThree *******************************/
@@ -91,8 +108,12 @@ public class Lab06aArrayAlgorithms {
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		 * Hint: Implement this with an indexed for loop
 		 */
-
-		
+		for (int idx = 1; idx < arr.length; idx++) {
+			int gap = Math.abs(arr[idx] - arr[idx - 1]);
+			if (gap > 3) {
+				return false;
+			}
+		}
 		return true;
 	}
 

@@ -15,6 +15,13 @@ public class Lab07bArrayListAlgorithmsOptional {
 		
 		/* INSERT YOUR CODE BELOW THESE COMMENTS, REPLACING THE LAST LINE IF NECESSARY
 		 */
+		for (int i = 0; i < arrL.size(); i++) {
+			for (int j = i + 1; j < arrL.size(); j++) {
+				if (arrL.get(i).equals(arrL.get(j))) {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 
@@ -29,7 +36,15 @@ public class Lab07bArrayListAlgorithmsOptional {
 	public static void rotateRight1 (ArrayList<Integer> arrL) {
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		 */
-
+		int listSize = arrL.size();
+		if (listSize <= 1) {
+			return;
+		}
+		int last = arrL.get(listSize - 1);
+		for (int i = listSize - 1; i > 0; i--) {
+			arrL.set(i, arrL.get(i - 1));
+		}
+		arrL.set(0, last);
 	}
 	
 
@@ -44,7 +59,12 @@ public class Lab07bArrayListAlgorithmsOptional {
 	public static void rotateRight2 (ArrayList<Integer> arrL) {
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		 */
-
+		int listSize = arrL.size();
+		if (listSize <= 1) {
+			return;
+		}
+		int last = arrL.remove(listSize - 1);
+		arrL.add(0, last);
 	}
 
 	/**
@@ -56,7 +76,15 @@ public class Lab07bArrayListAlgorithmsOptional {
 	public static void reverse (ArrayList<Integer> arrL) {
 		/* INSERT YOUR CODE BELOW THESE COMMENTS
 		 */
-
+		int listSize = arrL.size();
+		if (listSize <= 1) {
+			return;
+		}
+		for (int i = 0; i < listSize / 2; i++) {
+			int temp = arrL.get(i);
+			arrL.set(i, arrL.get(listSize - 1 - i));
+			arrL.set(listSize - 1 - i, temp);
+		}
 	}
 
 	/**************************************************************/

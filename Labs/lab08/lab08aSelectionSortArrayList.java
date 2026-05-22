@@ -13,17 +13,31 @@ public class lab08aSelectionSortArrayList {
 	 *                Precondition - arrL is not null
 	 */
 	public static void selectionSort1 (ArrayList<Integer> arrL) {
-        int numIterations = 0;
+        int passCount = 0;
         
         /* Insert your code below this comment.
          * This version must use get and set to do a swap similar to arrays.
          * This version must NOT use add or remove.
          */
+		int n = arrL.size();
+		for (int outer = 0; outer < n; outer++) {
+			int smallestIdx = outer;
+			for (int inner = outer + 1; inner < n; inner++) {
+				if (arrL.get(inner) < arrL.get(smallestIdx)) {
+					smallestIdx = inner;
+				}
+			}
+			int hold = arrL.get(smallestIdx);
+			arrL.set(smallestIdx, arrL.get(outer));
+			arrL.set(outer, hold);
+			passCount++;
+		}
         
         
         // Print the total number of iterations
-	    System.out.println("Number of iterations: " + numIterations);
+		System.out.println("Number of iterations: " + passCount);
 	}
+	
 
 	/**
 	 * Modifies the given ArrayList by sorting the array using selectionSort2
@@ -34,16 +48,28 @@ public class lab08aSelectionSortArrayList {
 	 *                Precondition - arrL is not null
 	 */
 	public static void selectionSort2 (ArrayList<Integer> arrL) {
-        int numIterations = 0;
+        int passCount = 0;
         
         /* Insert your code below this comment.
          * This version must use get, add, and remove.
          * This version must NOT use set.
          */
-       
+		int n = arrL.size();
+		for (int outer = 0; outer < n; outer++) {
+			int smallestIdx = outer;
+			for (int inner = outer + 1; inner < n; inner++) {
+				if (arrL.get(inner) < arrL.get(smallestIdx)) {
+					smallestIdx = inner;
+				}
+			}
+			int pulled = arrL.remove(smallestIdx);
+			arrL.add(outer, pulled);
+			passCount++;
+		}
         
         // Print the total number of iterations
-	    System.out.println("Number of iterations: " + numIterations);
+	    System.out.println("Number of iterations: " + passCount);
+		
 	}
 	
 	/**************************************************************
