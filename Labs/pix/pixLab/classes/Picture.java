@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.awt.font.*;
 import java.awt.geom.*;
@@ -297,8 +296,9 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    String imgDir = "/Users/NikhilSinha/Downloads/csa/APCSA/Labs/pix/pixLab/classes/images/";
+    Picture flower1 = new Picture(imgDir + "flower1.jpg");
+    Picture flower2 = new Picture(imgDir + "flower2.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
@@ -308,7 +308,7 @@ public class Picture extends SimplePicture
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
     this.mirrorVertical();
-    this.write("collage.jpg");
+    this.write(imgDir + "collage.jpg");
   }
   
   
@@ -344,7 +344,7 @@ public class Picture extends SimplePicture
    */
   /*public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("/Users/NikhilSinha/Downloads/csa/APCSA/Labs/pix/pixLab/classes/images/beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();

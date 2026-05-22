@@ -1,4 +1,3 @@
-
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -9,10 +8,12 @@
  */
 public class PictureTester
 {
+  private static final String IMG_DIR = "/Users/NikhilSinha/Downloads/csa/APCSA/Labs/pix/pixLab/classes/images/";
+
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture(IMG_DIR + "beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
@@ -20,7 +21,7 @@ public class PictureTester
   
   public static void testKeepOnlyBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture(IMG_DIR + "beach.jpg");
     beach.explore();
     beach.keepOnlyBlue();
     beach.explore();
@@ -28,14 +29,14 @@ public class PictureTester
   
   public static void testNegate()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture(IMG_DIR + "beach.jpg");
     beach.explore();
     beach.negate();
     beach.explore();
   }
   
   public static void testGrayscale() {
-	  Picture beach = new Picture("beach.jpg");
+	  Picture beach = new Picture(IMG_DIR + "beach.jpg");
 	    beach.explore();
 	    beach.grayscale();
 	    beach.explore();
@@ -43,7 +44,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture(IMG_DIR + "caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -51,13 +52,13 @@ public class PictureTester
   
   public static void testMirrorVerticalRightToLeft()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture(IMG_DIR + "caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
   public static void testMirrorHorizontal() {
-	    Picture caterpillar = new Picture("caterpillar.jpg");
+	    Picture caterpillar = new Picture(IMG_DIR + "caterpillar.jpg");
 	    caterpillar.explore();
 	    caterpillar.mirrorHorizontal();
 	    caterpillar.explore();
@@ -67,14 +68,14 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture(IMG_DIR + "temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
   }
   public static void testMirrorArms()
   {
-    Picture temple = new Picture("snowman.jpg");
+    Picture temple = new Picture(IMG_DIR + "snowman.jpg");
     temple.explore();
     temple.mirrorArms();
     temple.explore();
@@ -82,19 +83,19 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture(IMG_DIR + "640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
   public static void testFixUnderwater()
   {
-    Picture canvas = new Picture("water.jpg");
+    Picture canvas = new Picture(IMG_DIR + "water.jpg");
     canvas.explore();
     canvas.fixUnderwater();
     canvas.explore();
   }
   public static void testMirrorDiagonal() {
-	  Picture canvas = new Picture("snowman.jpg");
+	  Picture canvas = new Picture(IMG_DIR + "snowman.jpg");
 	  canvas.explore();
 	  canvas.mirrorDiagonal();
 	  canvas.explore();  
@@ -102,7 +103,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture(IMG_DIR + "swan.jpg");
     swan.explore();
     swan.edgeDetection(10);
     swan.explore();
@@ -128,9 +129,9 @@ public class PictureTester
 //    testFixUnderwater(); //mine
 //    testMirrorVertical(); // already implemented
 //    testMirrorVerticalRightToLeft(); //mine
-    testMirrorHorizontal();
+//    testMirrorHorizontal();
 //    testMirrorHorizontalBotToTop();
-//    testMirrorDiagonal();
+    testMirrorDiagonal();
 //    testMirrorTemple(); // already implemented
 //    testMirrorArms(); //mine
 //    testMirrorGull();
